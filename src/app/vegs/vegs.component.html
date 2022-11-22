@@ -1,0 +1,22 @@
+<div>
+  <label for="new-veg">Veg nombre</label>
+  <input id="new-veg" #vegName>
+  <label for="new-veg">Veg categoria</label>
+  <input id="new-veg" #vegCat>
+  <label for="new-veg">Veg nombre cientifico</label>
+  <input id="new-veg" #vegNameCien>
+  <label for="new-veg">Veg rating</label>
+  <input id="new-veg" #vegRate>
+  <button type="button" class="add-button" (click)="add(vegName.value,vegCat.value,vegNameCien.value,vegRate.value); vegName.value='';vegCat.value='';vegNameCien.value='';vegRate.value=''">
+    Add veg
+  </button>
+</div>
+<ul class="vegetales">
+  <li *ngFor="let veg of vegetales">
+    <a routerLink="/detail/{{veg.id}}">
+      <span class="badge">{{veg.nombre}}</span> {{vegName.name}}
+    </a>
+    <button type="button" class="delete" title="delete veg"
+      (click)="delete(veg)">x</button>
+  </li>
+</ul>

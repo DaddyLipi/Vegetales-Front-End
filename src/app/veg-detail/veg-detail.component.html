@@ -1,0 +1,12 @@
+<div *ngIf="veg">
+  <h2>{{veg.nombre | uppercase}} Detalles</h2>
+  <div><span>Id: </span>{{veg.id}}</div>
+  <div><span>Categoria: </span>{{veg.categoria}}</div>
+  <div><span>Nombre cientifico: </span>{{veg.nombreCientico}}</div>
+  <div><span>Rating: </span>{{veg.ratingPersonal}}</div>
+  <div>
+    <label for="veg-nombre">Veg nombre: </label>
+    <input id="hveg-nombre" [(ngModel)]="veg.nombre" placeholder="Vegetal"/>
+  </div>
+  <button type="button" (click)="goBack()">Volver</button>
+</div>
